@@ -1,0 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #205c7e;
+    color: #FFF;
+    margin: 0;
+    padding: .2em;
+    overflow: hidden;
+}
+
+.app-name{
+    font-family: 'Yesteryear', cursive;
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-indent: .5em;
+}

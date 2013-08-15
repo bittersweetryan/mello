@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mello</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/mello.css">
+</head>
+<body>
+    <header>
+        <h1 class="app-name">Mello</h1>
+    </header>
+  <script src="js/libs/custom.modernizr.js"></script>
+  
+  <script type="text/x-handlebars">
+    <h2>Welcome to Ember.js</h2>
+
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+    <ul>
+    {{#each item in model}}
+      <li>{{item}}</li>
+    {{/each}}
+    </ul>
+  </script>
+
+  <script src="js/libs/jquery-1.9.1.js"></script>
+  <script src="js/libs/handlebars-1.0.0.js"></script>
+  <script src="js/libs/ember-1.0.0-rc.7.js"></script>
+  <script src="js/libs/foundation.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
