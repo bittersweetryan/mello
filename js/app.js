@@ -1,11 +1,14 @@
-App = Ember.Application.create();
+Mello = Ember.Application.create();
 
-App.Router.map(function() {
-  // put your routes here
+Mello.Store = DS.Store.extend({
+	adapter: 'Todos.LSAdapter',
+	revision : 12
 });
 
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
+Mello.LSAdapter = DS.LSAdapter.extend({
+	namespace: 'mello-emberjs'
+});
+
+Mello.Router.map(function() {
+    this.resource( 'lists', { path : '/' } );   
 });
