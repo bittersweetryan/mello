@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>Mello</title>
+	<link rel="icon" 
+		type="image/png" 
+		href="img/favicon.png">
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/foundation.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
@@ -15,33 +18,26 @@
 	<script src="js/libs/custom.modernizr.js"></script>
 	
 	<script type="text/x-handlebars">
-		<div class="row">
-		    {{#linkTo reveal}}New List{{/linkTo}}
-		</div>
 		{{outlet}}
-		{{render 'reveal'}}
 	</script>
 	
 	<script type="text/x-handlebars" data-template-name="lists">
-		<section id="lists-container">
+		<section id="lists-container" class="lists-container">
 			<div class="row">
 			{{#each controller}}
 				<section class="list list-inline">
-					{{name}}
+					<h1>{{name}}</h1>
+					<div class="add-card">
+					</div>
 				</section>
 			{{/each}}
+			
+			<section class="list new-list list-inline">
+				{{view Ember.TextField id="new-list" class="list-input" placeholder="New List" valueBinding="newName" action="createList"}}
+			</sction>
 			<div class="row">
 		</section>
 	</script>
-    
-    <script type="text/x-handlebars" data-template-name="reveal">
-        <div id="myModal" class="reveal-modal">
-            <h2>Awesome. I have it.</h2>
-            <p class="lead">Your couch.  It is mine.</p>
-            <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
-            <a class="close-reveal-modal">&#215;</a>
-        </div>
-    </script>
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
 	<script src="js/libs/handlebars-1.0.0.js"></script>
@@ -61,7 +57,6 @@
 	
 	<!-- controllers -->
 	<script src="js/controllers/lists-controller.js"></script>
-	<script src="js/controllers/reveal-controller.js"></script>
 	<!-- end controllers -->
 	<script>
 		$(document).foundation();

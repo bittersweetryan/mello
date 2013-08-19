@@ -1,3 +1,4 @@
+/* BASE */
 body{
     margin: 0;
     padding: 0;
@@ -12,6 +13,11 @@ header{
     overflow: hidden;
 }
 
+input{
+	border-radius: 4px;
+}
+
+/* END BASE */
 .app-name{
     font-family: 'Yesteryear', cursive;
     color: #fff;
@@ -28,8 +34,28 @@ header{
     border-radius: 4px;
     padding: 10px;
     border: 1px solid #999;
+    vertical-align: top;
+}
+
+.list h1{
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.list input{
+	margin-bottom:0;
+}
+
+.list.new-list{
+	background-color: #628DA4;	
 }
 
 .list-inline{
     display: inline-block;
 }
+
+.lists-container{
+	padding: 20px;
+	position: relative;
+}
+
