@@ -3,54 +3,69 @@
 <head>
 <meta charset="utf-8">
 <title>Mello</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/foundation.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/mello.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/foundation.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/mello.css">
 </head>
 <body>
-    <header>
-        <h1 class="app-name">Mello</h1>
-    </header>
-  <script src="js/libs/custom.modernizr.js"></script>
+		<header>
+				<h1 class="app-name">Mello</h1>
+		</header>
+	<script src="js/libs/custom.modernizr.js"></script>
 	
 	<script type="text/x-handlebars">
-		New List
+		<div class="row">
+		    {{#linkTo reveal}}New List{{/linkTo}}
+		</div>
 		{{outlet}}
+		{{render 'reveal'}}
 	</script>
 	
 	<script type="text/x-handlebars" data-template-name="lists">
 		<section id="lists-container">
+			<div class="row">
 			{{#each controller}}
-				<section class="list">
+				<section class="list list-inline">
 					{{name}}
 				</section>
 			{{/each}}
+			<div class="row">
 		</section>
 	</script>
-
-  <script src="js/libs/jquery-1.9.1.js"></script>
-  <script src="js/libs/handlebars-1.0.0.js"></script>
-  <script src="js/libs/ember-1.0.0-rc.7.js"></script>
-  <script src="js/libs/foundation.min.js"></script>
-  <script src="js/libs/ember-data-0.13.min.js"></script>
-  <script src="js/libs/localstorage_adapter.js"></script>
-  <script src="js/app.js"></script>
-  
-  <!-- routes -->
-  <script src="js/routes/lists-route.js"></script>
-  <!-- end routes -->
-  
-  <!-- models -->
-  <script src="js/models/list.js"></script>
-  <!-- end models -->
-  
-  <!-- controllers -->
-  <script src="js/controllers/lists-controller.js"></script>
-  <!-- end controllers -->
-  <script>
-    $(document).foundation();
-  </script>
+    
+    <script type="text/x-handlebars" data-template-name="reveal">
+        <div id="myModal" class="reveal-modal">
+            <h2>Awesome. I have it.</h2>
+            <p class="lead">Your couch.  It is mine.</p>
+            <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
+    </script>
+    
+	<script src="js/libs/jquery-1.9.1.js"></script>
+	<script src="js/libs/handlebars-1.0.0.js"></script>
+	<script src="js/libs/ember-1.0.0-rc.7.js"></script>
+	<script src="js/libs/foundation.min.js"></script>
+	<script src="js/libs/ember-data-0.13.min.js"></script>
+	<script src="js/libs/localstorage_adapter.js"></script>
+	<script src="js/app.js"></script>
+	
+	<!-- routes -->
+	<script src="js/routes/lists-route.js"></script>
+	<!-- end routes -->
+	
+	<!-- models -->
+	<script src="js/models/list.js"></script>
+	<!-- end models -->
+	
+	<!-- controllers -->
+	<script src="js/controllers/lists-controller.js"></script>
+	<script src="js/controllers/reveal-controller.js"></script>
+	<!-- end controllers -->
+	<script>
+		$(document).foundation();
+	</script>
 </body>
 </html>
 

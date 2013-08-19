@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 header{
@@ -15,7 +16,20 @@ header{
     font-family: 'Yesteryear', cursive;
     color: #fff;
     font-weight: 500;
+    font-size: 2em;
     margin: 0;
     padding: 0;
     text-indent: .5em;
+}
+
+.list{
+    width: 200px;
+    background-color: #e3e3e3;
+    border-radius: 4px;
+    padding: 10px;
+    border: 1px solid #999;
+}
+
+.list-inline{
+    display: inline-block;
 }
