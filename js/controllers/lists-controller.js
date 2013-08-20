@@ -10,6 +10,5 @@ Mello.ListsController = Ember.ArrayController.extend({
 		})
 		
 		list.save();
-		//console.log( list.get( 'name' ) );
 	}
 });

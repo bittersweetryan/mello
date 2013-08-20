@@ -26,7 +26,7 @@
 			<div class="row">
 			{{#each controller}}
 				<section class="list list-inline">
-					<h1>{{name}}</h1>
+					<h1>{{listName}}</h1>
 					<div class="add-card">
 					</div>
 				</section>
@@ -34,8 +34,8 @@
 			
 			<section class="list new-list list-inline">
 				{{view Ember.TextField id="new-list" class="list-input" placeholder="New List" valueBinding="newName" action="createList"}}
-			</sction>
-			<div class="row">
+			</section>
+			</div>
 		</section>
 	</script>
     
@@ -45,6 +45,8 @@
 	<script src="js/libs/foundation.min.js"></script>
 	<script src="js/libs/ember-data-0.13.min.js"></script>
 	<script src="js/libs/localstorage_adapter.js"></script>
+	
+	<!-- has appliation mappings (including routes map) -->
 	<script src="js/app.js"></script>
 	
 	<!-- routes -->
@@ -53,11 +55,13 @@
 	
 	<!-- models -->
 	<script src="js/models/list.js"></script>
+	<script src="js/models/store.js"></script>
 	<!-- end models -->
 	
 	<!-- controllers -->
 	<script src="js/controllers/lists-controller.js"></script>
 	<!-- end controllers -->
+	
 	<script>
 		$(document).foundation();
 	</script>
