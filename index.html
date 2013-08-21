@@ -13,7 +13,9 @@
 </head>
 <body>
 		<header>
+			<div class="row">
 				<h1 class="app-name">Mello</h1>
+			</div>
 		</header>
 	<script src="js/libs/custom.modernizr.js"></script>
 	
@@ -28,7 +30,7 @@
 				<section class="list list-inline">
 					<h1>{{listName}} list</h1>
 					<div class="add-card">
-						Add a card...
+						{{#linkTo 'card.new'}}Add a card...{{/linkTo}}
 					</div>
 					<div class="remove-card">
 						<a {{action "removeCard"}}>x</a>
@@ -55,10 +57,12 @@
 	
 	<!-- routes -->
 	<script src="js/routes/lists-route.js"></script>
+	<script src="js/routes/card-new-route.js"></script>
 	<!-- end routes -->
 	
 	<!-- models -->
 	<script src="js/models/list.js"></script>
+	<script src="js/models/card.js"></script>
 	<script src="js/models/store.js"></script>
 	<!-- end models -->
 	
