@@ -24,17 +24,21 @@
 	<script type="text/x-handlebars" data-template-name="lists">
 		<section id="lists-container" class="lists-container">
 			<div class="row">
-			{{#each controller}}
+			{{#each controller itemController="list"}}
 				<section class="list list-inline">
-					<h1>{{listName}}</h1>
+					<h1>{{listName}} list</h1>
 					<div class="add-card">
+						Add a card...
+					</div>
+					<div class="remove-card">
+						<a {{action "removeCard"}}>x</a>
 					</div>
 				</section>
 			{{/each}}
 			
-			<section class="list new-list list-inline">
-				{{view Ember.TextField id="new-list" class="list-input" placeholder="New List" valueBinding="newName" action="createList"}}
-			</section>
+				<section class="list new-list list-inline">
+					{{view Ember.TextField id="new-list" class="list-input" placeholder="New List" valueBinding="listName" action="createList"}}
+				</section>
 			</div>
 		</section>
 	</script>
@@ -60,6 +64,7 @@
 	
 	<!-- controllers -->
 	<script src="js/controllers/lists-controller.js"></script>
+	<script src="js/controllers/list-controller.js"></script>
 	<!-- end controllers -->
 	
 	<script>

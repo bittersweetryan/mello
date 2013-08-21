@@ -35,6 +35,7 @@ input{
     padding: 10px;
     border: 1px solid #999;
     vertical-align: top;
+    position: relative;
 }
 
 .list h1{
@@ -59,3 +60,13 @@ input{
 	position: relative;
 }
 
+.remove-card{
+	position : absolute;
+	margin: 6px;
+	font-family: Helvetica, Arial, Sans-Serif;
+	top: 0;
+	right: 0;
+	font-weight: 700;
+	cursor: pointer;
+	color: #205c7e;
+}
