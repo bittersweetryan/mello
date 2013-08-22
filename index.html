@@ -32,11 +32,14 @@
 					{{#each cards}}
 					<div class="card">
 						{{description}}
+						<div class="edit edit-card hand"></div>
+						<div class="remove remove-card hand"></div>
 					</div>
 					{{/each}}
-					<div class="remove-card">
-						<a {{action "removeList"}}>x</a>
-					</div>
+					<a {{action "removeList"}} class="hand">
+						<div class="remove remove-list"></div>
+					</a>
+					
 					<section class="new-card">
 						{{view Ember.TextField id="new-card" class="card-input" placeholder="New Card" valueBinding="cardDescription" action="createCard"}}
 					</section>

@@ -60,17 +60,62 @@ input{
 	position: relative;
 }
 
-.remove-card{
+.remove{
+    width: 15px;
+    height: 15px;
+    background: url( ../img/x.svg);
+}
+
+.remove-list{
 	position : absolute;
 	margin: 6px;
 	font-family: Helvetica, Arial, Sans-Serif;
 	top: 0;
 	right: 0;
 	font-weight: 700;
-	cursor: pointer;
 	color: #205c7e;
+}
+
+.remove-card{
+    position: absolute;
+    top: 3px;
+    right: 3px;
 }
 
 .no-display{
     display: none;
+}
+
+.card{
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 4px;
+    margin: 10px 0;
+    border: 1px solid #b9b9b9;
+    position: relative;
+}
+
+.edit{
+    width: 15px;
+    height: 15px;
+    background: url( ../img/pen_alt_stroke.svg);
+}
+
+.edit-card{
+    display: block;
+    position: absolute;
+    top: 3px;
+    right: 20px;
+}
+
+.edit:hover{
+    background: url( ../img/pen_alt_fill.svg);
+}
+
+.card:hover{
+    border-color: #205c7e;
+};
+
+.hand{
+    cursor: pointer;
 }
