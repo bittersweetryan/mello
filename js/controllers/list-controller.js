@@ -1,8 +1,22 @@
 Mello.ListController = Ember.ObjectController.extend({
-	removeCard : function(){
+	removeList : function(){
 		var list = this.get( 'model' );
 
 		list.deleteRecord();
 		list.save();
+	},
+	createCard : function(){
+		var list = this.get( 'model' );
+
+		var card = Mello.Card.createRecord( {
+			description : this.get( 'cardDescription' )
+		} );
+
+		list.get( 'cards' ).pushObject( card );
+
+		card.save();
+		list.save();
+
+		this.set( 'cardDescription', '' );
 	}
 });

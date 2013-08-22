@@ -70,3 +70,7 @@ input{
 	cursor: pointer;
 	color: #205c7e;
 }
+
+.no-display{
+    display: none;
+}
