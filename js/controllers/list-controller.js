@@ -1,4 +1,4 @@
-Mello.ListController = Ember.ObjectController.extend({
+App.ListController = Ember.ObjectController.extend({
 	removeList : function(){
 		var list = this.get( 'model' );
 
@@ -8,7 +8,7 @@ Mello.ListController = Ember.ObjectController.extend({
 	createCard : function(){
 		var list = this.get( 'model' );
 
-		var card = Mello.Card.createRecord( {
+		var card = App.Card.createRecord( {
 			description : this.get( 'cardDescription' )
 		} );
 

@@ -1,4 +1,4 @@
-Mello.Card  = DS.Model.extend({
+App.Card  = DS.Model.extend({
 	description : DS.attr( 'string' ),
-	list : DS.belongsTo( 'Mello.List' )
+	list : DS.belongsTo( 'App.List' )
 });

@@ -66,6 +66,12 @@ input{
     background: url( ../img/x.svg);
 }
 
+.remove-small{
+    width: 10px;
+    height: 10px;
+    background: url( ../img/x_sm.svg);
+}
+
 .remove-list{
 	position : absolute;
 	margin: 6px;
@@ -101,6 +107,12 @@ input{
     background: url( ../img/pen_alt_stroke.svg);
 }
 
+.edit-small{
+    width: 10px;
+    height: 10px;
+    background: url( ../img/pen_alt_stroke_sm.svg);
+}
+
 .edit-card{
     display: block;
     position: absolute;
@@ -112,9 +124,13 @@ input{
     background: url( ../img/pen_alt_fill.svg);
 }
 
+.edit_sm:hover{
+    background: url( ../img/pen_alt_fill_sm.svg);
+}
+
 .card:hover{
     border-color: #205c7e;
-};
+}
 
 .hand{
     cursor: pointer;

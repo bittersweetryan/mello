@@ -1,8 +1,8 @@
-Mello.Store = DS.Store.extend({
-	adapter: 'Mello.LSAdapter',
+App.Store = DS.Store.extend({
+	adapter: 'App.LSAdapter',
 	revision : 12
 });
 
-Mello.LSAdapter = DS.LSAdapter.extend({
+App.LSAdapter = DS.LSAdapter.extend({
 	namespace: 'mello-emberjs'
 });

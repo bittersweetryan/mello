@@ -1,7 +1,7 @@
-Mello.ListsController = Ember.ArrayController.extend({
+App.ListsController = Ember.ArrayController.extend({
 
 	createList : function(){
-		var list = Mello.List.createRecord({
+		var list = App.List.createRecord({
 			listName : this.get( 'listName' )
 		});
 		

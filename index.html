@@ -29,11 +29,15 @@
 				{{#each controller itemController="list"}}
 				<section class="list list-inline">
 					<h1>{{listName}}</h1>
-					{{#each cards}}
+					{{#each cards itemController="card"}}
 					<div class="card">
-						{{description}}
-						<div class="edit edit-card hand"></div>
-						<div class="remove remove-card hand"></div>
+						{{#if isEditing}}
+							{{ view App.EditCardView valueBinding="description"}}
+						{{else}}
+							<label>{{description}}</label>
+							<div class="edit-small edit-card hand" {{action "editCard" on="click"}}></div>
+							<div class="remove-small remove-card hand"></div>
+						{{/if}}
 					</div>
 					{{/each}}
 					<a {{action "removeList"}} class="hand">
@@ -76,8 +80,12 @@
 	<!-- controllers -->
 	<script src="js/controllers/lists-controller.js"></script>
 	<script src="js/controllers/list-controller.js"></script>
+	<script src="js/controllers/card-controller.js"></script>
 	<!-- end controllers -->
 
+	<!-- views -->
+	<script src="js/views/edit-card-view.js"></script>
+	<!-- end views -->
 	<script>
 		$(document).foundation();
 	</script>

@@ -1,3 +1,3 @@
-Mello.CardNewRoute = Ember.Route.extend({
+App.CardNewRoute = Ember.Route.extend({
 
 });

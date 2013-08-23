@@ -1,5 +1,5 @@
-Mello = Ember.Application.create();
+App = Ember.Application.create();
 
-Mello.Router.map(function() {
+App.Router.map(function() {
 	this.resource( 'lists', { path : '/' } );
 });

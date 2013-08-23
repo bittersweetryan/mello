@@ -1,6 +1,5 @@
-Mello.ListsRoute = Ember.Route.extend({
+App.ListsRoute = Ember.Route.extend({
 	model: function() {
-		
-		return Mello.List.find();
+		return App.List.find();
 	}
 });
