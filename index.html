@@ -36,7 +36,7 @@
 						{{else}}
 							<label>{{description}}</label>
 							<div class="edit-small edit-card hand" {{action "editCard" on="click"}}></div>
-							<div class="remove-small remove-card hand"></div>
+							<div {{action "deleteCard"}} class="remove-small remove-card hand"></div>
 						{{/if}}
 					</div>
 					{{/each}}
@@ -68,7 +68,6 @@
 	
 	<!-- routes -->
 	<script src="js/routes/lists-route.js"></script>
-	<script src="js/routes/card-new-route.js"></script>
 	<!-- end routes -->
 	
 	<!-- models -->
