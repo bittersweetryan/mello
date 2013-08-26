@@ -29,10 +29,10 @@
 				{{#each controller itemController="list"}}
 				<section class="list list-inline">
 					<h1>{{listName}}</h1>
-					{{#each cards itemController="card"}}
+					{{#each card in cards itemController="card"}}
 					<div class="card">
 						{{#if isEditing}}
-							{{ view App.EditCardView valueBinding="description"}}
+							{{ view App.EditCardView }}
 						{{else}}
 							<label>{{description}}</label>
 							<div class="edit-small edit-card hand" {{action "editCard" on="click"}}></div>
@@ -45,7 +45,7 @@
 					</a>
 					
 					<section class="new-card">
-						{{view Ember.TextField id="new-card" class="card-input" placeholder="New Card" valueBinding="cardDescription" action="createCard"}}
+						{{view Ember.TextField class="card-input" placeholder="New Card" valueBinding="cardDescription" action="createCard"}}
 					</section>
 				</section>
 				{{/each}}
@@ -54,6 +54,16 @@
 				</section>
 			</div>
 		</section>
+	</script>
+
+	<script type="text/x-handlebars" data-template-name="editCardView">
+		{{ view Ember.TextField valueBinding="description" }}
+ 
+		{{ view Ember.Select viewName = "select" 
+							contentBinding = "App.ListsController"
+							optionLabelPath = "model.listName"
+							optionValuePath = "model.id" 
+							prompt = controller }}
 	</script>
     
 	<script src="js/libs/jquery-1.9.1.js"></script>

@@ -1,6 +1,10 @@
 App.CardController = Ember.ObjectController.extend({
 	isEditing : false,
 
+	lists : function(){
+		return App.List.find();
+	},
+
 	editCard : function(){
 		this.set( 'isEditing', true );
 	},

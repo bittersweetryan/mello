@@ -1,4 +1,7 @@
-App.EditCardView = Ember.TextField.extend({
+App.EditCardView = Ember.View.extend({
+
+	templateName : 'editCardView',
+
 	keys : {
 		escape : 27
 	},
