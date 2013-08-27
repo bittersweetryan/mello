@@ -12,14 +12,16 @@
 	<link rel="stylesheet" href="css/mello.css">
 </head>
 <body>
-		<header>
-			<div class="row">
-				<h1 class="app-name">Mello</h1>
-			</div>
-		</header>
+
 	<script src="js/libs/custom.modernizr.js"></script>
 	
 	<script type="text/x-handlebars">
+		<header>
+			<div class="row">
+				<h1 class="app-name left">Mello</h1>
+          		{{ view App.SearchView class="search right no-bottom" placeholder="Search..." valueBinding="query" }}
+			</div>
+		</header>
 		{{outlet}}
 	</script>
 	
@@ -56,9 +58,14 @@
 		</section>
 	</script>
 
-	<script type="text/x-handlebars" data-template-name="editCardView">
-		{{ view Ember.TextField valueBinding="card.description" }}
-	</script> 
+<script type="text/x-handlebars" data-template-name="editCardView">
+	{{ view Ember.TextField valueBinding="card.description" }}
+	
+	{{ view Ember.Select contentBinding = "??"
+						 optionLabelPath = "model.listName"
+						 optionValuePath = "model.id" 
+						 prompt = "Select List..." }}
+</script> 
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
 	<script src="js/libs/handlebars-1.0.0.js"></script>
@@ -72,6 +79,7 @@
 	
 	<!-- routes -->
 	<script src="js/routes/lists-route.js"></script>
+	<script src="js/routes/search-route.js"></script>
 	<!-- end routes -->
 	
 	<!-- models -->
@@ -88,7 +96,9 @@
 
 	<!-- views -->
 	<script src="js/views/edit-card-view.js"></script>
+	<script src="js/views/search-view.js"></script>
 	<!-- end views -->
+
 	<script>
 		$(document).foundation();
 	</script>
