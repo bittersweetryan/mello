@@ -10,10 +10,12 @@ App.CardController = Ember.ObjectController.extend({
 	},
 
 	deleteCard : function(){
-		var card = this.get( 'model' );
+		var card = this.get( 'model' ),
+			list = card.get( 'list' );
 
 		card.deleteRecord();
 
+		list.save();
 		card.save();
 	}
 });
