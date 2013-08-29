@@ -22,6 +22,7 @@ App.SearchRoute = Ember.Route.extend({
 	},
 
 	renderTemplate : function( controller ){
+		console.log( 'hi' );
 		this.render( 'lists', { controller : controller } );
 	}
 });
