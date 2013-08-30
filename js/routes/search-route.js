@@ -9,16 +9,16 @@ App.SearchRoute = Ember.Route.extend({
 
 		this.set( 'query', query );
 
-		lists.forEach( function( list ){
+		return lists.forEach( function( list ){
 			var cards = list.get( 'cards' ).forEach( function( card ){
 
 				card.set( 'show',
 					( query.length ) ? re.test( card.get( 'description' ) ) : true
 				);
 			} );
-		});
 
-		return lists;
+			return list;
+		});
 	},
 
 	renderTemplate : function( controller ){
