@@ -1,7 +1,5 @@
 App.ListsRoute = Ember.Route.extend({
 	model: function() {
-		return App.List.find();
-	},
-
-
+		return this.get( 'store' ).find( 'list' );
+	}
 });

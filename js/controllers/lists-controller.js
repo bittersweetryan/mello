@@ -1,11 +1,13 @@
 App.ListsController = Ember.ArrayController.extend({
-	createList : function(){
-		var list = App.List.createRecord({
-			listName : this.get( 'listName' )
-		});
+	actions : {
+		createList : function(){
+			var list = App.List.createRecord({
+				listName : this.get( 'listName' )
+			});
 
-		this.set( 'listName', '');
+			this.set( 'listName', '');
 
-		list.save();
+			list.save();
+		}
 	}
 });
