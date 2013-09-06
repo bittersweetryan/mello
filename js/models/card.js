@@ -1,5 +1,5 @@
 App.Card  = DS.Model.extend({
 	description : DS.attr(  ),
-	list : DS.belongsTo( 'App.List' ),
+	list : DS.belongsTo( 'list' ),
 	show : DS.attr({ type : 'boolean',  defaultValue : true } )
 });
