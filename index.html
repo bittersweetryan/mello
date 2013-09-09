@@ -32,7 +32,7 @@
 				<section class="list list-inline">
 					<h1>{{listName}}</h1>
 					{{#each card in cards itemController="card"}}
-						<div {{bind-attr class=":card show:no-display"}}>
+						<div {{bind-attr class=":card"}}>
 							{{#if isEditing}}
 								{{ view App.EditCardView }}
 							{{else}}

@@ -1,4 +1,4 @@
 App.List = DS.Model.extend({
 	listName : DS.attr( ),
-	cards : DS.hasMany( 'card' )
+	cards : DS.hasMany( 'card', { async : false } )
 });
