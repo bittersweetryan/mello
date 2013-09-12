@@ -14,10 +14,10 @@ App.ListController = Ember.ObjectController.extend({
 				show : true
 			} );
 
-			list.get( 'cards' ).pushObject( card );
-
-			card.save();
-			list.save();
+			card.save().then( function(){
+				list.get( 'cards' ).pushObject( card );
+				list.save();
+			});
 
 			this.set( 'cardDescription', '' );
 		}

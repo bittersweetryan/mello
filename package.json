@@ -1,0 +1,10 @@
+{
+  "name": "mello",
+  "version": "0.0.1",
+  "devDependencies": {
+    "matchdep": "~0.1.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="css/foundation.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Yesteryear' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/mello.css">
-</head>
+</head> 
 <body>
 
 	<script src="js/libs/custom.modernizr.js"></script>
@@ -19,7 +19,7 @@
 		<header>
 			<div class="row">
 				<h1 class="app-name left">Mello</h1>
-				{{ view App.SearchCardsView class="search right no-bottom" placeholder="Search Cards..." valueBinding="query" }}
+				{{ view App.SearchCardsView class="search right no-bottom" }}
 			</div>
 		</header>
 		{{outlet}}
@@ -66,6 +66,10 @@
 						 optionValuePath = "model.id" 
 						 prompt = "Select List..." }}
 </script> 
+
+<script type="text/x-handlebars" data-template-name="searchCardsView">
+	{{ input type="text" placeholder="Search Cards" valueBinding="query" }}    	
+</script>
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
 	<script src="js/libs/handlebars-1.0.0.js"></script>
@@ -93,6 +97,7 @@
 	<script src="js/controllers/list-controller.js"></script>
 	<script src="js/controllers/card-controller.js"></script>
 	<script src="js/controllers/search-controller.js"></script>
+
 	<!-- end controllers -->
 
 	<!-- views -->

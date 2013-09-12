@@ -1,25 +1,26 @@
 App.EditCardView = Ember.View.extend({
 
-	templateName : 'editCardView',
+	valueBinding : 'card.description',
 
 	keys : {
 		escape : 27,
 		enter : 13
 	},
 
-	actions : {
-		keyUp: function( e ){
-			if( e.which === this.keys.escape || e.which === this.keys.enter ){
-				this.toggleController( false );
+	change : function( e ){
+		this.get( 'controller' ).save( );
+		this.toggleController( false );
+	},
 
-				if( e.which === this.keys.enter){
-					this.get( 'controller.model' ).save();
-				}
-			}
-		},
-
-		toggleController: function( isEditing ){
-			this.set( 'controller.isEditing',  isEditing );
+	keyUp: function( e ){
+		if( e.which === this.keys.escape ){
+			this.toggleController( false );
 		}
+
+		console.log( this.get('controller' ) );
+	},
+
+	toggleController: function( isEditing ){
+		this.set( 'controller.isEditing',  isEditing );
 	}
 });

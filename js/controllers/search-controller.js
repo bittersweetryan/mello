@@ -1,5 +1,4 @@
 App.SearchController = Ember.ArrayController.extend({
-
 	query : null,
 
 	searchObserver : function(){
