@@ -19,7 +19,7 @@
 		<header>
 			<div class="row">
 				<h1 class="app-name left">Mello</h1>
-				{{ view App.SearchCardsView class="search right no-bottom" }}
+				{{ view Ember.TextField valueBinding=query class="search right no-bottom" action="searchLists" placeholder="Search cards..."}}
 			</div>
 		</header>
 		{{outlet}}
@@ -59,17 +59,8 @@
 	</script>
 
 <script type="text/x-handlebars" data-template-name="editCardView">
-	{{ view Ember.TextField valueBinding="card.description" }}
-	
-	{{ view Ember.Select contentBinding = "??"
-						 optionLabelPath = "model.listName"
-						 optionValuePath = "model.id" 
-						 prompt = "Select List..." }}
+	{{ view Ember.TextField valueBinding="description" action="save" }}
 </script> 
-
-<script type="text/x-handlebars" data-template-name="searchCardsView">
-	{{ input type="text" placeholder="Search Cards" valueBinding="query" }}    	
-</script>
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
 	<script src="js/libs/handlebars-1.0.0.js"></script>
@@ -83,7 +74,7 @@
 	
 	<!-- routes -->
 	<script src="js/routes/lists-route.js"></script>
-	<script src="js/routes/search-route.js"></script>
+	<script src="js/routes/lists-search-route.js"></script>
 	<!-- end routes -->
 	
 	<!-- models -->
@@ -93,16 +84,15 @@
 	<!-- end models -->
 	
 	<!-- controllers -->
+	<script src="js/controllers/application-controller.js"></script>
 	<script src="js/controllers/lists-controller.js"></script>
 	<script src="js/controllers/list-controller.js"></script>
 	<script src="js/controllers/card-controller.js"></script>
-	<script src="js/controllers/search-controller.js"></script>
 
 	<!-- end controllers -->
 
 	<!-- views -->
 	<script src="js/views/edit-card-view.js"></script>
-	<script src="js/views/search-cards-view.js"></script>
 	<!-- end views -->
 
 	<script>

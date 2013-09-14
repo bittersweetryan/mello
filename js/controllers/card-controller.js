@@ -1,23 +1,30 @@
 App.CardController = Ember.ObjectController.extend({
 	isEditing : false,
 	
-	editCard : function(){
-		this.set( 'isEditing', true );
-	},
+	actions : {
+		editCard : function(){
+			this.set( 'isEditing', true );
+		},
 
-	deleteCard : function(){
-		var card = this.get( 'model' ),
-			list = card.get( 'list' );
+		deleteCard : function(){
+			updateModel( 'deleteRecord' );
+		},
 
-		card.deleteRecord();
-		
-		card.save();
-		list.save();
+		save : function(){
+			this.set( 'isEditing', false );
+			updateModel();
+		},
 
-		list.get( 'store' ).commit();
-	},
+		updateModel : function( cardMethod ){
+			var card = this.get( 'model' ),
+				list = card.get( 'list' );
 
-	save : function(){
-		this.get( 'model' ).save();
+			if( cardMethod && cardMethod in card){
+				card[ 'cardMethod' ]();
+			}
+
+			card.save();
+			list.save();
+		}
 	}
 });
