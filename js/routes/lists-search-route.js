@@ -2,13 +2,14 @@ App.ListsSearchRoute = Ember.Route.extend({
 
 	//always gets run
 	setupController : function(){
-
+		
 	},
 
 	//only gets run when entering through URL
 	model : function( params ){
-		console.log( this.controllerFor( 'lists' ).get( 'model' ) );
-		return this.get( 'store' ).findAll( 'list' );
+		var lists = this.controllerFor( 'lists' ).get( 'model' );
+		
+		return lists;
 	},
 
 	filterList : function(){

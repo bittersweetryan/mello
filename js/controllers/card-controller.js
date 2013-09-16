@@ -1,6 +1,8 @@
 App.CardController = Ember.ObjectController.extend({
 	isEditing : false,
 	
+	needs: ['lists'],
+
 	actions : {
 		editCard : function(){
 			this.set( 'isEditing', true );

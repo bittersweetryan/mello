@@ -60,6 +60,13 @@
 
 <script type="text/x-handlebars" data-template-name="editCardView">
 	{{ view Ember.TextField valueBinding="description" action="save" }}
+
+	{{ view Ember.Select viewName="select"
+						 contentBinding="controllers.lists.content"
+						 optionValuePath="content.id"
+						 optionLabelPath="content.listName"
+						 prompt="Select List..."
+						 selectionBinding="card.list"}}
 </script> 
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
