@@ -20,14 +20,15 @@ App.CardController = Ember.ObjectController.extend({
 
 		save : function(){
 			this.set( 'isEditing', false );
-			this.send( 'updateModel', 'updateRecord' );
+			
+			this.send( 'updateModel', 'save' );
 		},
 
 		updateModel : function( cardMethod ){
 			var card = this.get( 'model' );
-			
+
 			if( cardMethod && cardMethod in card){
-				card[ 'cardMethod' ]();
+				card[ cardMethod ]();
 			}
 		}
 	}
