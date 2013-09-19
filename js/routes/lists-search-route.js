@@ -24,6 +24,7 @@ App.ListsSearchRoute = Ember.Route.extend({
 			} );
 		});
 
+		
 		return lists;
 	}
 });

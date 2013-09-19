@@ -11,9 +11,11 @@ App.CardController = Ember.ObjectController.extend({
 			list = card.get( 'list' ),
 			newList = this.get( 'newList' );
 
-		newList.get( 'carsd' ).pushObject( card );
+		list.get( 'cards' ).removeObject( card );
 
-		card.list = this.get( 'newList' );
+		newList.get( 'cards' ).pushObject( card );
+
+		card.set( 'list', this.get( 'newList' ) );
 
 		card.save().then( function(){
 			list.save();
