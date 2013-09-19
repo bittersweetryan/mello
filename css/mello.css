@@ -140,4 +140,18 @@ input.search{
     width: 200px;
     margin-top: 4px;
     margin-bottom: 0;
+    margin-right: 10px;
+}
+
+.select-list{
+    margin: 10px 0 0 0;
+}
+
+.header-link{
+    color: #FFF;
+    vertical-align: middle;
+}
+
+.header-link:hover{
+    color: #e3e3e3;
 }

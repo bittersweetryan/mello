@@ -18,7 +18,8 @@
 	<script type="text/x-handlebars">
 		<header>
 			<div class="row">
-				<h1 class="app-name left">Mello</h1>
+				{{#link-to 'lists'}}<h1 class="app-name left">Mello</h1>{{/link-to}}
+				{{#link-to 'about' class="header-link right"}}About{{/link-to}}
 				{{ view Ember.TextField valueBinding=query class="search right no-bottom" action="searchLists" placeholder="Search cards..."}}
 			</div>
 		</header>
@@ -62,12 +63,17 @@
 	{{ view Ember.TextField valueBinding="description" action="save" }}
 
 	{{ view Ember.Select viewName="select"
+						 class="select-list"
 						 contentBinding="controllers.lists.content"
 						 optionValuePath="content.id"
 						 optionLabelPath="content.listName"
 						 prompt="Select List..."
-						 selectionBinding="listId"}}
+						 selectionBinding="newList"}}
 </script> 
+
+<script type="text/x-handlebars" data-template-name="about">
+    <h1>This app was created by Ryan at NCDevCon</h1>
+</script>
     
 	<script src="js/libs/jquery-1.9.1.js"></script>
 	<script src="js/libs/handlebars-1.0.0.js"></script>

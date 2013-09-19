@@ -1,13 +1,25 @@
 App.CardController = Ember.ObjectController.extend({
 	isEditing : false,
 
-	listId : null,
+	newList : null,
 	
 	needs: ['lists'],
 
 	updateList : function(){
-		console.log( this.get( 'model.list' ) );
-	}.observes( 'listId' ),
+		
+		var card = this.get( 'model' ),
+			list = card.get( 'list' ),
+			newList = this.get( 'newList' );
+
+		newList.get( 'carsd' ).pushObject( card );
+
+		card.list = this.get( 'newList' );
+
+		card.save().then( function(){
+			list.save();
+			newList.save();
+		} );
+	}.observes( 'newList' ),
 
 	actions : {
 		editCard : function(){
