@@ -7,16 +7,25 @@ App.ListController = Ember.ObjectController.extend({
 			list.save();
 		},
 		createCard : function(){
-			var list = this.get( 'model' );
+			var list = this.get( 'model' ),
+				cards;
 			
 			var card = this.store.createRecord( 'card', {
 				description : this.get( 'cardDescription' ),
 				list : list
 			} );
 
-			list.get( 'cards' ).pushObject( card );
+			cards = list.get( 'cards' );
 
-			card.save().then( list.save );
+			cards.then( function(){
+
+				card.save().then( function(){
+
+					cards.pushObject( card );
+					list.save().then( function(){ console.log( 'list saved' );});
+				} );
+				
+			} );
 
 			this.set( 'cardDescription', '' );
 		}
