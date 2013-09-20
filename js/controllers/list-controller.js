@@ -20,9 +20,9 @@ App.ListController = Ember.ObjectController.extend({
 			cards.then( function(){
 
 				card.save().then( function(){
-
+					
 					cards.pushObject( card );
-					list.save().then( function(){ console.log( 'list saved' );});
+					list.save();
 				} );
 				
 			} );

@@ -59,7 +59,7 @@
 	</script>
 
 <script type="text/x-handlebars" data-template-name="editCardView">
-	{{ view Ember.TextField valueBinding="description" action="save" }}
+	{{ view Ember.TextField valueBinding="description" action="updateCard" }}
 
 	{{ view Ember.Select viewName="select"
 						 class="select-list"
@@ -108,7 +108,6 @@
 	<script src="js/controllers/lists-controller.js"></script>
 	<script src="js/controllers/list-controller.js"></script>
 	<script src="js/controllers/card-controller.js"></script>
-
 	<!-- end controllers -->
 
 	<!-- views -->
