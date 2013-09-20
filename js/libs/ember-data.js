@@ -7,8 +7,8 @@
 
 
 
-// Version: v1.0.0-beta.1-225-g995b366
-// Last commit: 995b366 (2013-09-19 00:19:18 -0700)
+// Version: v1.0.0-beta.1-231-g3e3061d
+// Last commit: 3e3061d (2013-09-19 23:43:50 -0700)
 
 
 (function() {
@@ -6674,7 +6674,7 @@ DS.RESTSerializer = DS.JSONSerializer.extend({
     var key = relationship.key,
         belongsTo = get(record, key);
     key = this.keyForAttribute ? this.keyForAttribute(key) : key;
-    json[key + "_type"] = belongsTo.constructor.typeKey;
+    json[key + "Type"] = belongsTo.constructor.typeKey;
   }
 });
 
