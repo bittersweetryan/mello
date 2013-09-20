@@ -29,7 +29,7 @@ App.CardController = Ember.ObjectController.extend({
 		},
 
 		deleteCard : function(){
-			updateModel( 'deleteRecord' );
+			this.send( 'updateModel', 'deleteRecord' );
 		},
 
 		save : function(){
