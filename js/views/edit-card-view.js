@@ -3,8 +3,7 @@ App.EditCardView = Ember.View.extend({
 	templateName: 'editCardView',
 
 	keys : {
-		escape : 27,
-		enter : 13
+		escape : 27
 	},
 
 	keyUp: function( e ){

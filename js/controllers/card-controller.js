@@ -30,6 +30,16 @@ App.CardController = Ember.ObjectController.extend({
 			list.get( 'cards' ).removeObject( card );
 	},
 
+	updateModel : function( cardMethod ){
+		var card = this.get( 'model' );
+
+		if( cardMethod && cardMethod in card){
+			card[ cardMethod ]();
+		}
+
+		card.save();
+	},
+
 	actions : {
 		editCard : function(){
 			this.set( 'isEditing', true );
@@ -37,23 +47,15 @@ App.CardController = Ember.ObjectController.extend({
 
 		deleteCard : function(){
 			this.removeCardFromList();
-			this.send( 'updateModel', 'deleteRecord' );
+			this.updateModel( 'deleteRecord' );
 		},
 
 		updateCard : function(){
 			this.set( 'isEditing', false );
 			
-			this.send( 'updateModel' );
+			this.updateModel();
 		},
 
-		updateModel : function( cardMethod ){
-			var card = this.get( 'model' );
 
-			if( cardMethod && cardMethod in card){
-				card[ cardMethod ]();
-			}
-
-			card.save();
-		}
 	}
 });
