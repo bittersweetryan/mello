@@ -20,7 +20,6 @@
 			<div class="row">
 				{{#link-to 'lists'}}<h1 class="app-name left">Mello</h1>{{/link-to}}
 				{{#link-to 'about' class="header-link right"}}About{{/link-to}}
-				{{ view Ember.TextField valueBinding=query class="search right no-bottom" action="searchLists" placeholder="Search cards..."}}
 			</div>
 		</header>
 		{{outlet}}
