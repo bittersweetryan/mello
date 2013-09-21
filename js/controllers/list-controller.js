@@ -8,20 +8,17 @@ App.ListController = Ember.ObjectController.extend({
 		},
 		createCard : function(){
 			var list = this.get( 'model' ),
-				cards,
 				card ;
 
 			card = this.store.createRecord( 'card', {
 				description : this.get( 'cardDescription' ),
 				list : list
 			} );
+		
+			card.save().then( function(){
+				var cards = list.get( 'cards' );
 
-			cards = list.get( 'cards' );
-
-			cards.then( function(){
-
-				card.save().then( function(){
-					
+				cards.then( function(){
 					cards.pushObject( card );
 					list.save();
 				} );

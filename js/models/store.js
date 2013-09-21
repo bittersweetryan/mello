@@ -1,5 +1,5 @@
 App.LSAdapter = DS.LSAdapter.extend({
-	namespace: 'mello-emberjs'
+	namespace: 'mello_emberjs'
 });
 
-App.ApplicationAdapter = DS.LSAdapter;
+App.ApplicationAdapter = App.LSAdapter;
