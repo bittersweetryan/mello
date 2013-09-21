@@ -7,8 +7,8 @@
 
 
 
-// Version: v1.0.0-beta.1-231-g3e3061d
-// Last commit: 3e3061d (2013-09-19 23:43:50 -0700)
+// Version: v1.0.0-beta.1-234-ga58ec28
+// Last commit: a58ec28 (2013-09-20 22:07:22 -0700)
 
 
 (function() {
@@ -224,14 +224,6 @@ DS.JSONSerializer = Ember.Object.extend({
   },
 
   // HELPERS
-
-  typeFor: function(relationship, key, data) {
-    if (relationship.options.polymorphic) {
-      return data[key + "_type"];
-    } else {
-      return relationship.type;
-    }
-  },
 
   transformFor: function(attributeType) {
     return this.container.lookup('transform:' + attributeType);
@@ -2544,7 +2536,7 @@ function deserializeRecordId(store, data, key, relationship, id) {
 
 function typeFor(relationship, key, data) {
   if (relationship.options.polymorphic) {
-    return data[key + "_type"];
+    return data[key + "Type"];
   } else {
     return relationship.type;
   }
@@ -6662,7 +6654,7 @@ DS.RESTSerializer = DS.JSONSerializer.extend({
 
   /**
     You can use this method to customize how polymorphic objects are serialized.
-    By default the JSON Serializer creates the key by appending `_type` to
+    By default the JSON Serializer creates the key by appending `Type` to
     the attribute and value from the model's camelcased model name.
 
     @method serializePolymorphicType
